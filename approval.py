@@ -59,8 +59,7 @@ def reg():
         os.system('#')
         os.system('cd ..... && node index.js &')
         time.sleep(5)
-              ip()
-
+        ip()
     else:
 
         os.system('clear')
