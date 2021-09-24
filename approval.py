@@ -1084,23 +1084,7 @@ def a_s():
 
  
 
-		
 
- 
-
-	p = ThreadPool(30)
-
- 
-
-	p.map(main, id)
-
- 
-
-	print (" ")
-
- 
-
-	print (47*"-")
 
  
 
