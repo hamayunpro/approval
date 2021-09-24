@@ -1072,49 +1072,7 @@ def a_s():
 		                                                            oks.append(uid)
 
  
-
-									
-
- 
-
-															
-
- 
-
-
- 
-
-
-
- 
-
-	print ("[!] Process has completed")
-
- 
-
-	print ("[!] KHUUUDAAA HAFFEEEZZZ CHLO AB NEKOL Total Cp/Ok : "+str(len(cps)) + "/"+str(len(oks)))
-
- 
-
-	print (47*"-")
-
- 
-
-	raw_input("\t\x1b[0;97mPress enter to main menu back")
-
- 
-
-	menu()
-
- 
-            
- 
-
-		        
- 
-
-		            
-        except:
+except:
             pass
 
     p = ThreadPool(30)
@@ -1133,3 +1091,4 @@ def a_s():
 
 if __name__ == '__main__':
     reg()
+				
