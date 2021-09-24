@@ -1081,11 +1081,6 @@ def a_s():
 
  
 
-		except:
-
- 
-
-			pass
 
  
 
